@@ -1,0 +1,30 @@
+{%extends "base.html"%}
+{%block body%}
+
+<form action="{{url_for('index')}}" method="post">
+    <div class="form-group">
+        <div class="form-group col-md-4">
+             <label for="fromCurr">From</label>
+              <select id="fromCurr" class="form-control" name="fromCurr">
+                  {%for data in currency%}
+                        <option >{{data}}</option>
+                  {%endfor%}
+              </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-group col-md-4">
+             <label for="toCurr">From</label>
+              <select id="toCurr" class="form-control" name="toCurr">
+                  {%for data in currency%}
+                        <option >{{data}}</option>
+                  {%endfor%}
+              </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" value="{{result}}" disabled placeholder="Exchange Rate">
+    </div>
+    <button type="submit" class="btn btn-primary">Get Exchange Rate</button>
+</form>
+{%endblock%}
